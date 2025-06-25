@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "2f69919d-8474-417e-9538-7f998d1148ec",
+		"name": "Smart_Parking_Lot_API_Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46098510",
+		"_collection_link": "https://swaraj-6562739.postman.co/workspace/SWARAJ's-Workspace~bd10f22b-e75a-4299-8992-b385cfb7b946/collection/46098510-2f69919d-8474-417e-9538-7f998d1148ec?action=share&source=collection_link&creator=46098510"
+	},
+	"item": [
+		{
+			"name": "Add Single parking spot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"spotType\": \"SMALL\",\r\n  \"isOccupied\": false,\r\n  \"level\": 1,\r\n  \"zone\": \"A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/addSpot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"addSpot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Bulk parking spot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"spotType\": \"SMALL\",\r\n    \"isOccupied\": false,\r\n    \"level\": 0,\r\n    \"zone\": \"A\"\r\n  },\r\n  {\r\n    \"spotType\": \"MEDIUM\",\r\n    \"isOccupied\": false,\r\n    \"level\": 1,\r\n    \"zone\": \"B\"\r\n  },\r\n  {\r\n    \"spotType\": \"LARGE\",\r\n    \"isOccupied\": false,\r\n    \"level\": 2,\r\n    \"zone\": \"C\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/addSpots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"addSpots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching All Available parking spots",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"spotType\": \"MEDIUM\",\r\n  \"isOccupied\": false,\r\n  \"level\": 1,\r\n  \"zone\": \"B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/availableSpots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"availableSpots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check In CAR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"licensePlate\": \"KA01AB5555\",\r\n  \"type\": \"CAR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/checkIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"checkIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check In MOTORCYCLE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"licensePlate\": \"KA01AB2222\",\r\n  \"type\": \"MOTORCYCLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/checkIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"checkIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check In BUS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"licensePlate\": \"KA01AB3333\",\r\n  \"type\": \"BUS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/checkIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"checkIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check OUT via PathVariable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/parking/checkOut/8d6ec5bf-9e02-4941-a29b-21ea846e0240",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"checkOut",
+						"8d6ec5bf-9e02-4941-a29b-21ea846e0240"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check OUT via RequestBody",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ticketId\": \"c91ac267-06de-4a81-b60b-9a0acb196a4c\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/parking/checkOut",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking",
+						"checkOut"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
